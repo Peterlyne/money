@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peterlynes Hub - Loan Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 450px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        button {
+            background: #2980b9;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1c5985;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Peterlynes Hub</h1>
+        <p>Loan Application Page</p>
+    </header>
+
+    <div class="container">
+        <h2>Apply for a Loan</h2>
+        <form onsubmit="return confirmLoan()">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" required>
+
+            <label for="idnumber">National ID:</label>
+            <input type="text" id="idnumber" required>
+
+            <label for="amount">Loan Amount:</label>
+            <input type="number" id="amount" required>
+
+            <label for="reason">Reason for Loan:</label>
+            <textarea id="reason" rows="4" required></textarea>
+
+            <button type="submit">Submit Loan Request</button>
+        </form>
+    </div>
+
+    <script>
+        function confirmLoan() {
+            let name = document.getElementById("fullname").value;
+            let id = document.getElementById("idnumber").value;
+            let amount = document.getElementById("amount").value;
+            let reason = document.getElementById("reason").value;
+
+            alert("Loan request submitted!\n\nName: " + name + "\nID: " + id + "\nAmount: " + amount + "\nReason: " + reason);
+            return false; // Prevent page reload
+        }
+    </script>
+</body>
+</html>
